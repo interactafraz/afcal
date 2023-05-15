@@ -25,8 +25,9 @@ It works great with services which allow RSS feeds as triggers to execute recurr
 ## Usage
 Accessing the script via `index.php` will display the RSS feed only. For adding, removing, enabling and disabling reminders use the dashboard.
 
-### Dashboard
-The dashboard is available at `dashboard.php`. It lists all existing reminders and allows to enable/disable them. If you want to enable/disable reminders via GET parameters, just use `dashboard.php?start=reminder-id` or `dashboard.php?stop=reminder-id`
+### Dashboard (dashboard.php)
+The dashboard lists all existing reminders and allows to enable/disable them. If you want to enable/disable reminders via GET parameters, just use `dashboard.php?start=reminder-id` or `dashboard.php?stop=reminder-id`
+
 To add/remove reminders, use the `Edit list` button. This opens a form with the following fields:
 
 **ID**
@@ -49,7 +50,7 @@ This is an advanced feature for users with lots of reminders.
 
 If you tend to be overwhelmed from time to time due to huge amounts of reminders within a short period this might be useful for you. AFcal contains a feature to add reminders to groups. You can use this for the master system (that gets triggered by the RSS feed) to handle reminders with different priorities more efficiently. You could, for example, set up a *Global Timeout Status* variable in your master system that allows to filter RSS items based on their reminder group when you're on vacation.
 
-Please note that this will only affect the JSON file which contains all reminders, not the RSS feed.
+> Please note that this will only affect the JSON file which contains all reminders, not the RSS feed.
 
 There are two groups:
 * All: For all reminders with low and high priority
