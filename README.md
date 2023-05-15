@@ -66,4 +66,4 @@ Groups can be useful for the control system that gets triggered by the RSS feed.
 
 ## License
 
-tba
+[MIT](https://github.com/interactafraz/afcal/blob/main/LICENSE.txt)
