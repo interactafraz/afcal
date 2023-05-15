@@ -30,12 +30,15 @@ The dashboard is available at `dashboard.php`. It lists all existing reminders a
 To add/remove reminders, use the `Edit list` button. This opens a form with the following fields:
 
 **ID**
+
 A unique ID for your reminder. This will be used for the timestamp filename. So you should only use regular english letters, numbers and hyphens. In the RSS feed this ID will also be the item description.
 
 **Title**
+
 This will be the RSS item title.
 
 **Interval**
+
 There are two types of reminder intervals:
 * Monthly: The syntax is `Monthly` + `[day number of month]`. This always requires a number with two digits (numbers below 10 must have a leading zero). So if you want to be reminded on the 4th day of every month you must enter `Monthly04`, not `Monthly4`.
 * Yearly: The syntax is `[month number]-[day number]`. This always requires numbers with two digits (numbers below 10 must have a leading zero). So February 6th would be `02-06`, November 25th would be `11-25`
