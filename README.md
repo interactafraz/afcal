@@ -31,7 +31,7 @@ Access the script via `index.php` to get the RSS feed. To add, remove, enable or
 
 ### Dashboard (dashboard.php)
 
-The dashboard lists all existing reminders and allows you to enable/disable them. To enable/disable reminders via GET parameters, use `dashboard.php?start=reminder-id` or `dashboard.php?stop=reminder-id`.
+The dashboard lists all existing reminders and allows you to enable/disable them. Reminders only appear in the RSS feed when they are enabled. To enable/disable reminders via GET parameters, use `dashboard.php?start=reminder-id` or `dashboard.php?stop=reminder-id`.
 
 To add/remove reminders, use the `Edit list` button, which opens a form with the following fields:
 
@@ -49,12 +49,20 @@ To add/remove reminders, use the `Edit list` button, which opens a form with the
 
 Groups can be useful for the control system that gets triggered by the RSS feed. You could, for example, set up a *Global Timeout Status* variable that helps to exclude RSS items based on their reminder group when you're on vacation.
 
-> Note: Groups only affect the JSON file containing all reminders, not the RSS feed.
+> Note: Group values do not affect the visibility of RSS feed items.
+
+## Roadmap
+
+- [ ] UI improvement: Redesign overall look and feel
+- [ ] UI improvement: Add interval picker to edit form
+- [ ] UI improvement: Validate ID syntax while typing into edit form
+- [ ] Expose groups in RSS feed for each item
+- [ ] Allow users to add custom groups
 
 ## Notes
 
 * If you plan to handle sensitive data with this tool on a publicly accessible server, consider hardening your system using at least htaccess restrictions.
-* AFcal comes from *AFRAZ* and *calendar*.
+* AFcal comes from *AFRAZ* and *calendar* since it behaves like a calendar for reminders.
 
 ## License
 
