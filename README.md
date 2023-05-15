@@ -10,7 +10,7 @@ It works great with services which allow RSS feeds as triggers to execute recurr
 
 ## Features
 * Available in German (default language) and English
-* Create reminders via backend interface
+* Manage reminders via backend interface
 * Enable/disable reminders via GET parameters
 * Add reminders to groups like "Essential" or "All". Useful if you temporarily need a break from certain reminders or when you're on vacation.
 * Saves data to JSON file
@@ -26,7 +26,7 @@ It works great with services which allow RSS feeds as triggers to execute recurr
 Accessing the script via `index.php` will display the RSS feed only. For adding, removing, enabling and disabling reminders use the dashboard.
 
 ### Dashboard
-The dashboard is available at `dashboard.php`. It lists all existing reminders and allows to enable/disable them. 
+The dashboard is available at `dashboard.php`. It lists all existing reminders and allows to enable/disable them. If you want to enable/disable reminders via GET parameters, just use `dashboard.php?start=reminder-id` or `dashboard.php?stop=reminder-id`
 To add/remove reminders, use the `Edit list` button. This opens a form with the following fields:
 
 **ID**
