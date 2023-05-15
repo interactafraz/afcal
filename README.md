@@ -41,6 +41,7 @@ There are two types of reminder intervals:
 * Yearly: The syntax is `[month number]-[day number]`. This always requires numbers with two digits (numbers below 10 must have a leading zero). So February 6th would be `02-06`, November 25th would be `11-25`
 
 **Group**
+
 This is an advanced feature for users with lots of reminders.
 
 If you tend to be overwhelmed from time to time due to huge amounts of reminders within a short period this might be useful for you. AFcal contains a feature to add reminders to groups. You can use this for the master system (that gets triggered by the RSS feed) to handle reminders with different priorities more efficiently. You could, for example, set up a *Global Timeout Status* variable in your master system that allows to filter RSS items based on their reminder group when you're on vacation.
