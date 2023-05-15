@@ -28,8 +28,8 @@ if(!is_dir($DirTimestamps)){
 $output .= "<rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>\n";
 $output .= "<channel>\n";
 
-$output .= "<title>Afcal</title>\n";
-$output .= "<description>Afcal</description>\n";
+$output .= "<title>AFcal</title>\n";
+$output .= "<description>AFcal</description>\n";
 $output .= "<atom:link href=\"".$URLmain."\" rel=\"self\" type=\"application/rss+xml\"/>\n";
 $output .= "<link>".$URLmain."</link>\n";
 

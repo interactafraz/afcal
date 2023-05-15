@@ -217,7 +217,7 @@ $output .= "</table>";
 
 <!doctype html>
 
-<html lang="de">
+<html lang="<?php echo $languageCode; ?>">
 <head>
   <meta charset="utf-8">
   <meta name="robots" content="noindex"/>

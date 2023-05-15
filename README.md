@@ -1,9 +1,10 @@
 # AFcal
 
-AFcal is a tool for setting up monthly and yearly reminders that can be accessed via a single RSS feed. It works great with services that allow RSS feeds as triggers to execute recurring actions, such as creating a card on a kanban board for manual NAS backups.
+AFcal is a tool for setting up monthly and yearly reminders that can be accessed via a single RSS feed. It works great with services that allow RSS feeds as triggers to execute recurring actions.
 
-## Possible Use Cases
+## Possible use Cases
 
+* Use as trigger for creating a card on a kanban board for manual NAS backups
 * Low-priority tasks at home (like cleaning your washing machine filter every January 1st and June 1st)
 * Reminders for manually backing up family photos to an external drive
 * Quarterly meetings with your accountant to keep your business running smoothly
@@ -40,10 +41,12 @@ To add/remove reminders, use the `Edit list` button, which opens a form with the
 **Title**: The RSS item title.
 
 **Interval**: Two types of reminder intervals are supported.
+
 * Monthly: Use the syntax `Monthly` + `[day number of month]`. Always use a two-digit number (like `Monthly04` for the 4th day of every month).
 * Yearly: Use the syntax `[month number]-[day number]`. Always use two-digit numbers (like `02-06` for February 6th or `11-25` for November 25th).
 
 **Group**: An advanced feature for users with many reminders. Use it to handle reminders with different priorities efficiently. Two groups are available.
+
 * All: For reminders with both low and high priority.
 * Essential: For reminders with high priority, such as health routines or important daily tasks.
 
@@ -56,8 +59,9 @@ Groups can be useful for the control system that gets triggered by the RSS feed.
 - [ ] UI improvement: Redesign overall look and feel
 - [ ] UI improvement: Add interval picker to edit form
 - [ ] UI improvement: Validate ID syntax while typing into edit form
-- [ ] Expose groups in RSS feed for each item
+- [ ] Expose group for each item in RSS feed
 - [ ] Allow users to add custom groups
+- [ ] Allow users to hide advanced features if not required to declutter UI
 
 ## Notes
 
