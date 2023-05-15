@@ -1,6 +1,6 @@
 # AFcal
 
-AFcal is a tool for setting up monthly and yearly reminders that can be accessed via a single RSS feed. It works great with services that allow RSS feeds as triggers to execute recurring actions.
+AFcal is a tool for setting up monthly and yearly reminders that can be accessed via a single RSS feed. It works great with services that allow RSS feeds as triggers to execute recurring actions like [n8n](https://github.com/n8n-io/n8n), [IFTTT](https://ifttt.com/) and [Zapier](https://zapier.com/).
 
 ## Possible use Cases
 
@@ -11,6 +11,7 @@ AFcal is a tool for setting up monthly and yearly reminders that can be accessed
 
 ## Features
 
+* Self host-able
 * Available in German (default language) and English
 * Manage reminders via responsive backend interface
 * Enable/disable reminders via GET parameters
