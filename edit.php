@@ -152,8 +152,9 @@ function confirmation(e)
 
 <label><?php echo $language['formLabelGroup']; ?></label>
 <select name="ReminderGroup">
-  <option value="All"><?php echo $language['formLabelGroupAll']; ?></option>
-  <option value="Essential"><?php echo $language['formLabelGroupEssential']; ?></option>
+	<option value="All"><?php echo $language['formLabelGroupAll']; ?></option>
+	<option value="Essential"><?php echo $language['formLabelGroupEssential']; ?></option>
+	<option value="Sabbatical"><?php echo $language['formLabelGroupSabbatical']; ?></option>
 </select>
 
 <input type="submit" value="<?php echo $language['formSave']; ?>">

@@ -2,7 +2,7 @@
 
 AFcal is a tool for setting up monthly and yearly reminders that can be accessed via a single RSS feed. It works great with services that allow RSS feeds as triggers to execute recurring actions like [n8n](https://github.com/n8n-io/n8n), [IFTTT](https://ifttt.com/) and [Zapier](https://zapier.com/).
 
-## Possible use Cases
+## Possible use cases
 
 * Use as trigger for creating a card on a kanban board for manual NAS backups
 * Low-priority tasks at home (like cleaning your washing machine filter every January 1st and June 1st)
@@ -49,9 +49,10 @@ To add/remove reminders, use the `Edit list` button, which opens a form with the
 **Group**: An advanced feature for users with many reminders. Use it to handle reminders with different priorities efficiently. Two groups are available.
 
 * All: For reminders with both low and high priority.
-* Essential: For reminders with high priority, such as health routines or important daily tasks.
+* Essential: For reminders with high priority at home, such as trash routines.
+* Sabbatical: For reminders with high priority on long trips, such as health routines.
 
-Groups can be useful for the control system that gets triggered by the RSS feed. You could, for example, set up a *Global Timeout Status* variable that helps to exclude RSS items based on their reminder group when you're on vacation.
+Groups can be useful for the control system that gets triggered by the RSS feed. You could, for example, set up a *Global Timeout Status* variable that helps to exclude RSS items based on their reminder group when you're on vacation at home or traveling around the world.
 
 > Note: Group values do not affect the visibility of RSS feed items.
 
