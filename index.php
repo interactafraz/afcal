@@ -73,9 +73,9 @@ for ($row = 0; $row < count($reminders); $row++) {
 			fclose($GuidFile); //Close Guid File
 			
 			$ContentItemText .= "<item>\n";
-			$ContentItemText .= "<title>".$ReminderTitle."</title>\n";
-			$ContentItemText .= "<guid isPermaLink=\"false\">".$URLmain."?id=".$guid."</guid>\n";
-			$ContentItemText .= "<description>".$ReminderID."</description>\n";
+			$ContentItemText .= "<title>" . "<![CDATA[" .$ReminderTitle. "]]>" . "</title>\n";
+			$ContentItemText .= "<guid isPermaLink=\"false\">". $URLmain ."?id=".$guid."</guid>\n";
+			$ContentItemText .= "<description>" . "<![CDATA[" . $ReminderID . "]]>" . "</description>\n";
 			$ContentItemText .= "<pubDate>".$DateCurrent. date(' O') ."</pubDate>\n";
 			$ContentItemText .= "<link>".$URLmain."</link>\n";
 			$ContentItemText .= "<atom:link href='".$URLmain."' rel='self' type='application/rss+xml'/>\n";
@@ -85,9 +85,9 @@ for ($row = 0; $row < count($reminders); $row++) {
 		}
 		else{ //Use existing reminder
 			$ContentItemText .= "<item>\n";
-			$ContentItemText .= "<title>".$ReminderTitle."</title>\n";
+			$ContentItemText .= "<title>" . "<![CDATA[" .$ReminderTitle. "]]>" . "</title>\n";
 			$ContentItemText .= "<guid isPermaLink=\"false\">".$URLmain."?id=".$GuidReference."</guid>\n";
-			$ContentItemText .= "<description>".$ReminderID."</description>\n";
+			$ContentItemText .= "<description>" . "<![CDATA[" . $ReminderID . "]]>" . "</description>\n";
 			$ContentItemText .= "<pubDate>".$DateReference. date(' O') ."</pubDate>\n";
 			$ContentItemText .= "<link>".$URLmain."</link>\n";
 			$ContentItemText .= "<atom:link href='".$URLmain."' rel='self' type='application/rss+xml'/>\n";
