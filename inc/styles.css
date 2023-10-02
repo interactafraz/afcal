@@ -95,7 +95,7 @@ input{border:0;box-sizing:border-box;font-family: 'Titillium Web', Helvetica, 'A
 input:focus{outline: none;}
 
 .form_edit{width:100%;max-width: 960px;margin-left:auto;margin-right:auto;margin-bottom: 5.5em;margin-top: 4em;}
-.form_edit label, .form_edit dl {background: transparent;text-align:left;color: #aaaaaa;}
+.form_edit label, .form_edit dl {background: transparent;text-align:left;color: #ffc800;}
 .form_edit > label, .form_edit dl > label, .form_edit dt > label {display: inline-block;font-size:0.8em;}
 .form_edit label.required:after{content:"*";font-size:1.2em}
 .form_edit label.required.hint::before{content:' ';background-color: #ffc800;display:inline-block;width: 0.8em;height: 0.8em;margin-right: 0.8em;vertical-align: baseline;border-radius: 10em;}
