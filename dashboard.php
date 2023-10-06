@@ -2,6 +2,8 @@
 
 include("inc/globals.php");
 
+header('Access-Control-Allow-Origin: *'); 
+
 $DateCurrent = date('D, d M Y H:i:s', time());
 $DateReference = "";
 $DateLast = "";

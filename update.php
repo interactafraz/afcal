@@ -2,6 +2,8 @@
 
 include("inc/globals.php");
 
+header('Access-Control-Allow-Origin: *'); 
+
 $ReminderID = strtolower($_POST['ReminderID']);
 $ReminderTitle = $_POST['ReminderTitle'];
 $ReminderInterval = $_POST['ReminderInterval'];
