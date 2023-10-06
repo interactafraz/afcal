@@ -2,6 +2,7 @@
 
 include("inc/globals.php");
 
+header('Access-Control-Allow-Origin: *'); 
 header('Content-type: application/xml');
 
 $URLmain = "https://". $_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']) ."/"; //Add base url here
