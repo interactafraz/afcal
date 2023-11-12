@@ -7,7 +7,14 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Origin: *'); 
 header('Content-type: application/xml');
 
-$URLmain = "https://". $_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']) ."/"; //Add base url here
+$URLmain = "";
+
+if( !str_contains($_SERVER['REQUEST_URI'], 'index.php') ){ //If script was called without "index.php" in URL
+	$URLmain = "https://". $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+}
+else{
+	$URLmain = "https://". $_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']) ."/";
+}
 
 $DateCurrent = date('D, d M Y H:i:s', time());
 $DateReference = "";
