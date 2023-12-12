@@ -22,6 +22,7 @@ $language['tableIntervalYearly'] = 'jährlich';
 $language['tableIntervalOn'] = 'am';
 $language['statusMessageStarted'] = 'gestartet';
 $language['statusMessageStopped'] = 'gestoppt';
+$language['statusMessageAttributeAdded'] = 'aktualisiert';
 /* VARS DASHBOARD END */
 
 /* VARS EDIT START */

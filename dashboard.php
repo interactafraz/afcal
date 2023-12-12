@@ -23,6 +23,7 @@ if(isset($_GET['start'])) {
 	
 	$PathReminderTimestamp = "./" . $DirTimestamps . "/" . $ReminderID . ".txt";
 	$PathReminderGuid = "./" . $DirTimestamps . "/" . $ReminderID . "_guid.txt";
+	$PathReminderAttributes = "./" . $DirTimestamps . "/" . $ReminderID . "_attributes.txt";
 	
 	$row = array_search($ReminderID, array_column($reminders, 0)); // Get array index
 	$ReminderInterval = $reminders[$row][2];
@@ -55,7 +56,6 @@ if(isset($_GET['start'])) {
 	fwrite($TimestampFile, $DateLast); //Insert last scheduled Date
 	fclose($TimestampFile); //Close Timestamp File	
 	
-	
 	if(file_exists($PathReminderGuid)) {
 		unlink($PathReminderGuid); // Delete Guid File
 	}
@@ -63,6 +63,19 @@ if(isset($_GET['start'])) {
 	$GuidFile = fopen($PathReminderGuid, "w"); //Create and open Guid File
 	fwrite($GuidFile, $guid); //Insert Guid
 	fclose($GuidFile); //Close Guid File
+	
+	if(file_exists($PathReminderAttributes)) {
+		unlink($PathReminderAttributes); // Delete Attribute File
+	}
+	$attributes = $AttributesDefault;
+
+	$AttributeFile = fopen($PathReminderAttributes, 'w+'); // // Create (or clear existing) Attribute file
+	flock($AttributeFile, LOCK_EX); //Lock file to avoid other processes writing to it simlutanously
+
+	fwrite($AttributeFile, $attributes); //Insert Attribute
+
+	flock($AttributeFile, LOCK_UN); //Unlock file for further access
+	fclose($AttributeFile); //Close Attribute File	
 	
 	header("Location: dashboard.php?status=success-" . $StatusType . "&" . "id=" . $ReminderID);
 	die();
@@ -72,6 +85,7 @@ elseif(isset($_GET['stop'])) {
 	$ReminderID = $_GET['stop'];
 	$PathReminderTimestamp = "./" . $DirTimestamps . "/" . $ReminderID . ".txt";
 	$PathReminderGuid = "./" . $DirTimestamps . "/" . $ReminderID . "_guid.txt";
+	$PathReminderAttributes = "./" . $DirTimestamps . "/" . $ReminderID . "_attributes.txt";
 	
 	if(file_exists($PathReminderTimestamp)) {
 		unlink($PathReminderTimestamp); // Delete Timestamp File
@@ -81,9 +95,30 @@ elseif(isset($_GET['stop'])) {
 		unlink($PathReminderGuid); // Delete Guid File
 	}
 	
+	if(file_exists($PathReminderAttributes)) {
+		unlink($PathReminderAttributes); // Delete Attribute File
+	}
+	
 	header("Location: dashboard.php?status=success-" . $StatusType . "&" . "id=" . $ReminderID);
 	die();
 }
+elseif( isset($_GET['attribute']) && isset($_GET['id']) ) { //Change attributes of reminder
+	$StatusType = "attribute";
+	$ReminderID = $_GET['id'];
+	$attributes = $_GET['attribute'];
+	$PathReminderAttributes = "./" . $DirTimestamps . "/" . $ReminderID . "_attributes.txt";
+	
+	$AttributeFile = fopen($PathReminderAttributes, 'w+'); // // Create (or clear existing) Attribute file
+	flock($AttributeFile, LOCK_EX); //Lock file to avoid other processes writing to it simlutanously
+
+	fwrite($AttributeFile, $attributes); //Insert Attribute
+
+	flock($AttributeFile, LOCK_UN); //Unlock file for further access
+	fclose($AttributeFile); //Close Attribute File
+	header("Location: dashboard.php?status=success-" . $StatusType . "&" . "id=" . $ReminderID);
+	die();
+}
+
 
 $output = "";
 
@@ -102,6 +137,9 @@ if(isset($_GET['status']) && isset($_GET['id'])) {
 	}
 	elseif ($_GET['status'] == "success-stop"){
 		$StatusMessage = "<strong>" . $ReminderTitle . "</strong>" . " ".$language['statusMessageStopped'].".";
+	}
+	elseif ($_GET['status'] == "success-attribute"){
+		$StatusMessage = "<strong>" . $ReminderTitle . "</strong>" . " " .$language['statusMessageAttributeAdded'].".";
 	}
 	
 	$output .= "<div class=\"message_status\">" . $StatusMessage . "</div>";

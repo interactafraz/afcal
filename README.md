@@ -16,6 +16,7 @@ AFcal is a tool for setting up monthly and yearly reminders that can be accessed
 * Manage reminders via responsive backend interface
 * Enable/disable reminders via GET parameters
 * Add reminders to groups for better organization
+* Add attributes to reminders
 * Saves data to JSON file
 
 ## Prerequisites
@@ -29,7 +30,7 @@ AFcal is a tool for setting up monthly and yearly reminders that can be accessed
 
 ## Usage
 
-Access the script via `index.php` to get the RSS feed. To add, remove, enable or disable reminders, use the dashboard.
+Access the script via `index.php` to get the RSS feed. To add, remove, enable or disable reminders, use the dashboard. Overdue reminders get restarted automatically when the feed is accessed and will be displayed immediately afterwards.
 
 ### Dashboard (dashboard.php)
 
@@ -55,6 +56,16 @@ To add/remove reminders, use the `Edit list` button, which opens a form with the
 Groups can be useful for the control system that gets triggered by the RSS feed. You could, for example, set up a *Global Timeout Status* variable that helps to exclude RSS items based on their reminder group when you're on vacation at home or traveling around the world.
 
 > Note: Group values do not affect the visibility of RSS feed items.
+
+---
+
+**Attributes**: A hidden feature that can be used to add custom data to reminders. Possible use cases include attaching a status/label to specific reminders or mark certain ones as *processed*. 
+
+To set an attribute, use `dashboard.php?id=reminder-id&attribute=attribute-data`. If an attribute was already set before it will be overwritten.
+
+The data will be saved to the `timestamps` folder in a `reminder-id_attributes.txt` file.
+
+> Note: Attributes get reset when a reminder is started, restarted or stopped.
 
 ## Roadmap
 
