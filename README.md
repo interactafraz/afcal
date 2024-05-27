@@ -47,7 +47,7 @@ To add/remove reminders, use the `Edit list` button, which opens a form with the
 * Monthly: Use the syntax `Monthly` + `[day number of month]`. Always use a two-digit number (like `Monthly04` for the 4th day of every month).
 * Yearly: Use the syntax `[month number]-[day number]`. Always use two-digit numbers (like `02-06` for February 6th or `11-25` for November 25th).
 
-**Group**: An advanced feature for users with many reminders. Use it to handle reminders with different priorities efficiently. Two groups are available.
+**Group**: An advanced feature for users with many reminders. Use it to handle reminders with different priorities efficiently.
 
 * All: For reminders with both low and high priority.
 * Essential: For reminders with high priority at home, such as trash routines.
